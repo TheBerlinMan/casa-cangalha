@@ -32,15 +32,16 @@ const Header = () => {
     >
       <div>
         <div className="flex gap-4 text-2xl items-end">
-          <Image src="/White-Text.png" alt="Casa Cangalha" width={200} height={200} />
-          {/* <Link href="/" >Casa Cangalha</Link> */}
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/White-Text.png" alt="Casa Cangalha" width={200} height={200} />
+          </Link>
         </div>
       </div>
       <div className="flex gap-4 -mb-1.5 items-center">
-        <Link href="/calendar">{currentLang.calendar}</Link>
-        <Link href="/blog">{currentLang.blog}</Link>
-        <Link href="/about">{currentLang.about}</Link>
-        <Link href="/support">{currentLang.support}</Link>
+        <Link href="/pages/calendar">{currentLang.calendar}</Link>
+        <Link href="/pages/blog">{currentLang.blog}</Link>
+        <Link href="/pages/about">{currentLang.about}</Link>
+        <Link href="/pages/support">{currentLang.support}</Link>
         <button
           onClick={toggleLanguage}
           className="ml-4 px-3 py-1 rounded border border-white/40 hover:bg-white/10 transition-colors"

@@ -59,11 +59,11 @@ const Footer = () => {
               {currentContent.description}
             </p>
             <div className="flex gap-4">
-              <Link href="/">{currentContent.links.mission}</Link>
+              {/* <Link href="/">{currentContent.links.mission}</Link> */}
               <Link href="/">{currentContent.links.about}</Link>
-              <Link href="/">{currentContent.links.contact}</Link>
+              {/* <Link href="/">{currentContent.links.contact}</Link> */}
               <Link href="/">{currentContent.links.support}</Link>
-              <Link href="/">{currentContent.links.admin}</Link>
+              <Link href="/pages/admin">{currentContent.links.admin}</Link>
             </div>
           </div>
           <div className="flex flex-col gap-4">
