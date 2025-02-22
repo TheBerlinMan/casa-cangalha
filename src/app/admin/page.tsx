@@ -6,10 +6,12 @@ const Admin = () => {
   return (
     <div>
       <SignedOut>
-        <SignInButton />
+        <div>Please sign in.</div>
       </SignedOut>
       <SignedIn>
-        <UserButton />
+        <div>
+          Welcome, User.
+        </div>
       </SignedIn>
     </div>
   );

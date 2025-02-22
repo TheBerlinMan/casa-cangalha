@@ -5,6 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "../context/LanguageContext";
 import { usePathname } from "next/navigation";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 const navItems = {
   en: {
@@ -22,23 +29,50 @@ const navItems = {
 };
 
 const Header = () => {
+  const path = usePathname();
+  const adminPath = "/admin";
 
-    const path = usePathname()
-    const adminPath = "/admin"
-
-  return (path === adminPath ? <AdminHeader /> : <MainHeader />);
+  return path === adminPath ? <AdminHeader /> : <MainHeader />;
 };
 
 export default Header;
 
-
 export const AdminHeader = () => {
-    return (
+  return (
+    <div>
+      <div
+        className="flex justify-between items-end px-8 py-4 h-20"
+        style={{ backgroundColor: "#65844A", color: "#E3E7D3" }}
+      >
         <div>
-            Test
+          <div className="flex gap-4 text-2xl items-end">
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/White-Text.png"
+                alt="Casa Cangalha"
+                width={200}
+                height={200}
+              />
+            </Link>
+          </div>
         </div>
-    )
-}
+        <div className="flex gap-4 -mb-1.5 items-center">
+          <ClerkProvider
+            
+          >
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <SignInButton />
+              <UserButton />
+            </SignedIn>
+          </ClerkProvider>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const MainHeader = () => {
   const { language, toggleLanguage } = useLanguage();

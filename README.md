@@ -4,7 +4,7 @@
 ## Todo
 
 - [x] Set up Calendar, Blog, About, Support, Admin page routes
-- [] Set up Auth with google provider
+- [x] Set up Auth with google provider
 - [] Admin Landing page for signin -> redirect to Admin Dashboard
 - [] Connect MongoDB
 - [] Set up Event model 
