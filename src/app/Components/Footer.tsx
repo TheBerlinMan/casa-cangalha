@@ -3,9 +3,12 @@
 import React from "react";
 import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
   const { language } = useLanguage();
+  const path = usePathname();
+  const adminPath = "/admin";
 
   const content = {
     en: {
@@ -48,6 +51,8 @@ const Footer = () => {
 
   const currentContent = content[language];
 
+  if (path === adminPath) return
+
   return (
     <div>
       <hr className="border-t border-gray-300" />
@@ -63,7 +68,7 @@ const Footer = () => {
               <Link href="/">{currentContent.links.about}</Link>
               {/* <Link href="/">{currentContent.links.contact}</Link> */}
               <Link href="/">{currentContent.links.support}</Link>
-              <Link href="/pages/admin">{currentContent.links.admin}</Link>
+              <Link href="/admin">{currentContent.links.admin}</Link>
             </div>
           </div>
           <div className="flex flex-col gap-4">

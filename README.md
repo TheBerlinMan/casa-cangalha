@@ -1,7 +1,7 @@
 
 
 
-## TODO
+## Todo
 
 - [x] Set up Calendar, Blog, About, Support, Admin page routes
 - [] Set up Auth with google provider
@@ -26,3 +26,6 @@
 - [] Edit Blog Form
 - [] Display Blog List on Admin Dashboard 
 - [] Display Blogs on Blog Page
+
+## Later Todo
+- [] figure out how to keep the pages in the pages folder but remove 'pages/' from before each url route

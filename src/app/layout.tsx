@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { LanguageProvider } from "./context/LanguageContext";
+import { ClerkProvider } from "@clerk/nextjs";
+ 
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,6 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body className="min-h-screen flex flex-col" >
         <LanguageProvider>
@@ -26,6 +29,7 @@ export default function RootLayout({
         </LanguageProvider>
       </body>
     </html>
+    </ClerkProvider>
   );
 }
 
