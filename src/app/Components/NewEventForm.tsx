@@ -1,6 +1,6 @@
 "use client"
 import { useState, FormEvent } from 'react';
-
+import Link from 'next/link';
 interface EventFormData {
   title: string;
   description: string;
@@ -145,6 +145,11 @@ export default function EventForm() {
       >
         Create Event
       </button>
+      <Link href="/admin">
+      <button className="bg-blue-500 text-white py-2 px-4 rounded-md">
+        Cancel
+      </button>
+      </Link>
     </form>
   );
 }

@@ -51,7 +51,7 @@ const Footer = () => {
 
   const currentContent = content[language];
 
-  if (path === adminPath) return
+  if (path.startsWith(adminPath)) return
 
   return (
     <div>

@@ -11,7 +11,7 @@
 - [x] Event Controllers
 - [x] New Event Form
 - [] Edit Event Form
-- [] Display Event List on Admin Dashboard 
+- [x] Display Event List on Admin Dashboard 
 - [] Setup FullCalendar? on Calendar page. Research Alts. 
 - [] Plug Events into FullCalendar 
 - [] Structure About Page w/ Bio (History, About Jackie, Mission / Vision)

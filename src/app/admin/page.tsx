@@ -1,8 +1,7 @@
 import React from "react";
-
-
+import Link from "next/link";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import NewEventForm from "../components/NewEventForm";
+import EventList from "../components/EventList";
 
 const Admin = () => {
   return (
@@ -12,8 +11,13 @@ const Admin = () => {
       </SignedOut>
       <SignedIn>
         <div>
+          <Link href="/admin/eventForm">
+            <button className="bg-blue-500 text-white py-2 px-4 rounded-md">
+              New Event
+            </button>
+          </Link>
+          <EventList />
 
-        <NewEventForm />
         </div>
       </SignedIn>
     </div>

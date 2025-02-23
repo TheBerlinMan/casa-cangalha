@@ -32,7 +32,7 @@ const Header = () => {
   const path = usePathname();
   const adminPath = "/admin";
 
-  return path === adminPath ? <AdminHeader /> : <MainHeader />;
+  return path.startsWith(adminPath) ? <AdminHeader /> : <MainHeader />;
 };
 
 export default Header;
