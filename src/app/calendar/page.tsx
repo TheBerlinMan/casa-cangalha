@@ -6,7 +6,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { IEventWithId } from '@/types/event';
 import { useLanguage } from '../context/LanguageContext';
-import EventModal from '@/app/components/EventModal';
+import EventModal from '../components/EventModal';
 
 const Calendar = () => {
   const [events, setEvents] = useState<any[]>([]);
