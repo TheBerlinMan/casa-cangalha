@@ -12,8 +12,8 @@
 - [x] New Event Form
 - [x] Edit Event Form
 - [x] Display Event List on Admin Dashboard 
-- [] Setup FullCalendar? on Calendar page. Research Alts. 
-- [] Plug Events into FullCalendar 
+- [x] Setup FullCalendar? on Calendar page. Research Alts. 
+- [x] Plug Events into FullCalendar 
 - [] Structure About Page w/ Bio (History, About Jackie, Mission / Vision)
 - [] Structure Support Page (Link to Patreon & Brazillian version)
 - [] Update Footer w/ Accurate Information
