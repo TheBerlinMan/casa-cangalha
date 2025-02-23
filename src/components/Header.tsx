@@ -3,7 +3,7 @@
 import React, { use } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "@/app/context/LanguageContext";
 import { usePathname } from "next/navigation";
 import {
   ClerkProvider,
