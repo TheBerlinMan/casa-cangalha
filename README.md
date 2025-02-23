@@ -29,3 +29,7 @@
 
 ## Later Todo
 - [] figure out how to keep the pages in the pages folder but remove 'pages/' from before each url route
+- [] add rsvp feature to event
+- [] narrow down event form inputs
+- [] style sign-in button
+- [] currently anyone can sign into admin w a google account. figure out how to limit it to approved users

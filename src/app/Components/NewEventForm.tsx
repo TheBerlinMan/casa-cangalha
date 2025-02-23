@@ -1,6 +1,7 @@
 "use client"
 import { useState, FormEvent } from 'react';
 import Link from 'next/link';
+
 interface EventFormData {
   title: string;
   description: string;
@@ -11,7 +12,11 @@ interface EventFormData {
   isPublished: boolean;
 }
 
-export default function EventForm() {
+interface Props {
+  onCancel: () => void;
+}
+
+export default function EventForm({ onCancel }: Props) {
   const [formData, setFormData] = useState<EventFormData>({
     title: '',
     description: '',
@@ -139,17 +144,21 @@ export default function EventForm() {
         </label>
       </div>
 
-      <button
-        type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-      >
-        Create Event
-      </button>
-      <Link href="/admin">
-      <button className="bg-blue-500 text-white py-2 px-4 rounded-md">
-        Cancel
-      </button>
-      </Link>
+      <div className="flex gap-4">
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          Create Event
+        </button>
+        <button
+          type="button"
+          onClick={onCancel}
+          className="border border-blue-500 text-blue-500 py-2 px-4 rounded-md hover:bg-blue-600 hover:text-white"
+        >
+          Cancel
+        </button>
+      </div>
     </form>
   );
 }

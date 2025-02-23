@@ -1,10 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Event } from '@/types/event'; // You'll need to create this type
+import { IEventWithId } from '@/types/event';
 
-export default function EventList() {
-  const [events, setEvents] = useState<Event[]>([]);
+interface EventListProps {
+  onEdit: (id: string) => void;
+}
+
+export default function EventList({ onEdit }: EventListProps) {
+  const [events, setEvents] = useState<IEventWithId[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -41,31 +45,63 @@ export default function EventList() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="space-y-4">
-      <h2 className="text-2xl font-bold mb-4">Events</h2>
+    <div className="overflow-x-auto">
       {events.length === 0 ? (
         <p>No events found</p>
       ) : (
-        <div className="grid gap-4">
-          {events.map((event) => (
-            <div 
-              key={event._id} 
-              className="p-4 border rounded-lg shadow-sm"
-            >
-              <h3 className="text-xl font-semibold">{event.title}</h3>
-              <p className="text-gray-600">{new Date(event.startDate).toLocaleDateString()}</p>
-              <p>{event.description}</p>
-              <div className="mt-2 space-x-2">
-                <button
-                  onClick={() => handleDelete(event._id)}
-                  className="px-3 py-1 text-sm text-red-600 border border-red-600 rounded hover:bg-red-50"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+        <table className="min-w-full table-auto">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Event Title
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Start Date
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                End Date
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {events.map((event) => (
+              <tr key={event._id}>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div className="text-sm font-medium text-gray-900">
+                    {event.title}
+                  </div>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div className="text-sm text-gray-500">
+                    {new Date(event.startDate).toLocaleDateString()}
+                  </div>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div className="text-sm text-gray-500">
+                    {new Date(event.endDate).toLocaleDateString()}
+                  </div>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                  <button
+                    onClick={() => onEdit(event._id)}
+                    className="text-blue-600 hover:text-blue-900 mr-4"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(event._id)}
+                    className="text-red-600 hover:text-red-900"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </div>
   );

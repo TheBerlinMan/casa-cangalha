@@ -7,7 +7,7 @@ interface Props {
   };
 }
 
-export async function SHOW(_request: NextRequest, { params }: Props) {
+export async function GET(_request: NextRequest, { params }: Props) {
   return getEventById(params.id);
 }
 
