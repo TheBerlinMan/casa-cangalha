@@ -6,10 +6,10 @@
 - [x] Set up Calendar, Blog, About, Support, Admin page routes
 - [x] Set up Auth with google provider
 - [] Admin Landing page for signin -> redirect to Admin Dashboard
-- [] Connect MongoDB
-- [] Set up Event model 
-- [] Event Controllers
-- [] New Event Form
+- [x] Connect MongoDB
+- [x] Set up Event model 
+- [x] Event Controllers
+- [x] New Event Form
 - [] Edit Event Form
 - [] Display Event List on Admin Dashboard 
 - [] Setup FullCalendar? on Calendar page. Research Alts. 

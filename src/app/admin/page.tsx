@@ -1,6 +1,8 @@
 import React from "react";
 
+
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import NewEventForm from "../components/NewEventForm";
 
 const Admin = () => {
   return (
@@ -10,7 +12,8 @@ const Admin = () => {
       </SignedOut>
       <SignedIn>
         <div>
-          Welcome, User.
+
+        <NewEventForm />
         </div>
       </SignedIn>
     </div>
