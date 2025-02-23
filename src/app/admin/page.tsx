@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
-import EventList from "../components/EventList";
-import NewEventForm from "../components/NewEventForm";
-import EditEventForm from "../components/EditEventForm";
+import EventList from "@/components/EventList";
+import NewEventForm from "@/components/NewEventForm";
+import EditEventForm from "@/components/EditEventForm";
 
 const Admin = () => {
   // Manage the active section tab (Events, Blogs, Products)
