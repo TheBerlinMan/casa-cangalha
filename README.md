@@ -10,7 +10,7 @@
 - [x] Set up Event model 
 - [x] Event Controllers
 - [x] New Event Form
-- [] Edit Event Form
+- [x] Edit Event Form
 - [x] Display Event List on Admin Dashboard 
 - [] Setup FullCalendar? on Calendar page. Research Alts. 
 - [] Plug Events into FullCalendar 
