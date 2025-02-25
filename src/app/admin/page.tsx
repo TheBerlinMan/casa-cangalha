@@ -8,6 +8,9 @@ import EditEventForm from "@/components/EditEventForm";
 import BlogList from "@/components/BlogList";
 import NewBlogForm from "@/components/NewBlogForm";
 import EditBlogForm from "@/components/EditBlogForm";
+import ProductList from "@/components/ProductList";
+import NewProductForm from "@/components/NewProductForm";
+import EditProductForm from "@/components/EditProductForm";
 
 const Admin = () => {
   // Manage the active section tab (Events, Blogs, Products)
@@ -18,6 +21,8 @@ const Admin = () => {
   const [editingEventId, setEditingEventId] = useState<string | null>(null);
   // The ID of the blog that we're currently editing
   const [editingBlogId, setEditingBlogId] = useState<string | null>(null);
+  // The ID of the product that we're currently editing
+  const [editingProductId, setEditingProductId] = useState<string | null>(null);
 
   // When the event update completes (from EditEventForm) you could perform additional tasks here.
   // For example, you might refresh the EventList or update local state.
@@ -46,6 +51,7 @@ const Admin = () => {
                       setFormMode("list");
                       setEditingEventId(null);
                       setEditingBlogId(null);
+                      setEditingProductId(null);
                     }}
                     className={`p-3 rounded-md text-left ${
                       activeTab === tab
@@ -140,7 +146,40 @@ const Admin = () => {
               )}
               {activeTab === "Products" && (
                 <div>
-                  <h2 className="text-2xl font-bold">Products Page</h2>
+                  <div className="flex flex-row justify-between items-center">
+                    <h2 className="text-2xl font-bold mb-4">
+                      {formMode === "new"
+                        ? "New Product"
+                        : formMode === "edit"
+                        ? "Edit Product"
+                        : "Products"}
+                    </h2>
+                    {formMode === "list" && (
+                      <button
+                        onClick={() => setFormMode("new")}
+                        className="bg-blue-500 text-white py-2 px-4 rounded-md mb-4"
+                      >
+                        New Product
+                      </button>
+                    )}
+                  </div>
+                  {formMode === "list" && (
+                    <ProductList
+                      onEdit={(id: string) => {
+                        setEditingProductId(id);
+                        setFormMode("edit");
+                      }}
+                    />
+                  )}
+                  {formMode === "new" && (
+                    <NewProductForm onCancel={() => setFormMode("list")} />
+                  )}
+                  {formMode === "edit" && editingProductId && (
+                    <EditProductForm
+                      productId={editingProductId}
+                      onCancel={() => setFormMode("list")}
+                    />
+                  )}
                 </div>
               )}
             </div>
