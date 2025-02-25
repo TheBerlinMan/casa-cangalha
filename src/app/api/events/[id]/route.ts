@@ -1,23 +1,87 @@
-import { NextRequest } from 'next/server';
-import { getEventById, updateEvent, deleteEvent } from '@/server/controllers/eventController';
+import { NextResponse } from 'next/server';
+import Event from '@/server/models/Event';
+import connectDB from '@/server/lib/mongodb';
 
 export async function GET(
-  _request: NextRequest,
-  { params }: { params: { id: string } }
+  _request: Request,
+  context: { params: { id: string } }
 ) {
-  return getEventById(params.id);
+  const { id } = context.params;
+  
+  try {
+    await connectDB();
+    const event = await Event.findById(id);
+    
+    if (!event) {
+      return NextResponse.json(
+        { error: 'Event not found' },
+        { status: 404 }
+      );
+    }
+    
+    return NextResponse.json(event);
+  } catch (error) {
+    return NextResponse.json(
+      { error },
+      { status: 500 }
+    );
+  }
 }
 
 export async function PUT(
-  request: NextRequest,
-  { params }: { params: { id: string } }
+  request: Request,
+  context: { params: { id: string } }
 ) {
-  return updateEvent(request, params.id);
+  const { id } = context.params;
+  
+  try {
+    await connectDB();
+    const data = await request.json();
+    
+    const event = await Event.findByIdAndUpdate(
+      id,
+      data,
+      { new: true, runValidators: true }
+    );
+    
+    if (!event) {
+      return NextResponse.json(
+        { error: 'Event not found' },
+        { status: 404 }
+      );
+    }
+    
+    return NextResponse.json(event);
+  } catch (error) {
+    return NextResponse.json(
+      { error },
+      { status: 500 }
+    );
+  }
 }
 
 export async function DELETE(
-  _request: NextRequest,
-  { params }: { params: { id: string } }
+  _request: Request,
+  context: { params: { id: string } }
 ) {
-  return deleteEvent(params.id);
+  const { id } = context.params;
+  
+  try {
+    await connectDB();
+    const event = await Event.findByIdAndDelete(id);
+    
+    if (!event) {
+      return NextResponse.json(
+        { error: 'Event not found' },
+        { status: 404 }
+      );
+    }
+    
+    return NextResponse.json({ message: 'Event deleted successfully' });
+  } catch (error) {
+    return NextResponse.json(
+      { error },
+      { status: 500 }
+    );
+  }
 } 
