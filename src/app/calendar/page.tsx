@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { EventClickArg, EventApi } from '@fullcalendar/core';
+import { EventClickArg } from '@fullcalendar/core';
 import { IEventWithId } from '@/types/event';
 import { useLanguage } from '../context/LanguageContext';
 import EventModal from '@/components/EventModal';
