@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import Event from '@/server/models/Event';
+import { Event } from '@/server/models/Event';
 import connectDB from '@/server/lib/mongodb';
 
 export async function GET() {

@@ -1,5 +1,6 @@
 // Define the base event interface
 export interface IEvent {
+  _id?: string;
   title: string;
   description: string;
   startDate: Date | string;

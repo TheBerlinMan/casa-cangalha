@@ -1,12 +1,11 @@
 import { NextResponse } from 'next/server';
-import Event from '@/server/models/Event';
+import { Event } from '@/server/models/Event';
 import connectDB from '@/server/lib/mongodb';
 
-export async function GET(_: Request, context: any) {
+export async function GET(request: Request, { params }: { params: { id: string } }) {
+  await connectDB();
   try {
-    const { id } = context.params;
-    await connectDB();
-    const event = await Event.findById(id);
+    const event = await Event.findById(params.id);
     
     if (!event) {
       return NextResponse.json(
@@ -24,14 +23,13 @@ export async function GET(_: Request, context: any) {
   }
 }
 
-export async function PUT(request: Request, context: any) {
+export async function PUT(request: Request, { params }: { params: { id: string } }) {
+  await connectDB();
   try {
-    const { id } = context.params;
-    await connectDB();
     const data = await request.json();
     
     const event = await Event.findByIdAndUpdate(
-      id,
+      params.id,
       data,
       { new: true, runValidators: true }
     );
@@ -52,11 +50,10 @@ export async function PUT(request: Request, context: any) {
   }
 }
 
-export async function DELETE(_: Request, context: any) {
+export async function DELETE(_: Request, { params }: { params: { id: string } }) {
+  await connectDB();
   try {
-    const { id } = context.params;
-    await connectDB();
-    const event = await Event.findByIdAndDelete(id);
+    const event = await Event.findByIdAndDelete(params.id);
     
     if (!event) {
       return NextResponse.json(

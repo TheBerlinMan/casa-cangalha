@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import Event from '../models/Event';
+import { Event } from '../models/Event';
 import connectDB from '../lib/mongodb';
 
 export async function getAllEvents() {
