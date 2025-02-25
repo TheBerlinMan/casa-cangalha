@@ -3,10 +3,10 @@ import Event from '@/server/models/Event';
 import connectDB from '@/server/lib/mongodb';
 
 export async function GET(
-  _request: Request,
-  context: { params: { id: string } }
+  request: Request,
+  { params }: { params: { id: string } }
 ) {
-  const { id } = context.params;
+  const { id } = params;
   
   try {
     await connectDB();
@@ -30,9 +30,9 @@ export async function GET(
 
 export async function PUT(
   request: Request,
-  context: { params: { id: string } }
+  { params }: { params: { id: string } }
 ) {
-  const { id } = context.params;
+  const { id } = params;
   
   try {
     await connectDB();
@@ -61,10 +61,10 @@ export async function PUT(
 }
 
 export async function DELETE(
-  _request: Request,
-  context: { params: { id: string } }
+  request: Request,
+  { params }: { params: { id: string } }
 ) {
-  const { id } = context.params;
+  const { id } = params;
   
   try {
     await connectDB();
