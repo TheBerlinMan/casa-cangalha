@@ -4,16 +4,42 @@ import { useState, useEffect } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import { EventClickArg, EventApi } from '@fullcalendar/core';
 import { IEventWithId } from '@/types/event';
 import { useLanguage } from '../context/LanguageContext';
 import EventModal from '@/components/EventModal';
 
+// Define the calendar event type based on how we transform the events
+interface CalendarEvent {
+  id: string;
+  title: string;
+  start: Date | string;
+  end: Date | string;
+  description: string;
+  location?: string;
+  extendedProps: {
+    imageUrl?: string;
+  };
+}
+
+// Define the type expected by EventModal
+interface EventModalEvent {
+  title: string;
+  start: Date;
+  end: Date;
+  description: string;
+  location?: string;
+  extendedProps?: {
+    imageUrl?: string;
+  };
+}
+
 const Calendar = () => {
-  const [events, setEvents] = useState<any[]>([]);
+  const [events, setEvents] = useState<CalendarEvent[]>([]);
   const { language } = useLanguage();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedEvent, setSelectedEvent] = useState<any>(null);
+  const [selectedEvent, setSelectedEvent] = useState<EventModalEvent | null>(null);
 
   useEffect(() => {
     fetchEvents();
@@ -48,8 +74,20 @@ const Calendar = () => {
     }
   };
 
-  const handleEventClick = (info: any) => {
-    setSelectedEvent(info.event);
+  const handleEventClick = (info: EventClickArg) => {
+    // Convert EventApi to EventModalEvent
+    const eventApi = info.event;
+    const modalEvent: EventModalEvent = {
+      title: eventApi.title,
+      start: eventApi.start || new Date(),
+      end: eventApi.end || new Date(),
+      description: eventApi.extendedProps?.description as string || '',
+      location: eventApi.extendedProps?.location as string,
+      extendedProps: {
+        imageUrl: eventApi.extendedProps?.imageUrl as string
+      }
+    };
+    setSelectedEvent(modalEvent);
   };
 
   if (isLoading) return <div className="flex justify-center items-center h-96">Loading...</div>;

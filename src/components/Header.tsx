@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/app/context/LanguageContext";
@@ -58,7 +58,6 @@ export const AdminHeader = () => {
         </div>
         <div className="flex gap-4 -mb-1.5 items-center">
           <ClerkProvider
-            
           >
             <SignedOut>
               <SignInButton />

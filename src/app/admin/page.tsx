@@ -5,7 +5,6 @@ import { SignedIn, SignedOut } from "@clerk/nextjs";
 import EventList from "@/components/EventList";
 import NewEventForm from "@/components/NewEventForm";
 import EditEventForm from "@/components/EditEventForm";
-
 const Admin = () => {
   // Manage the active section tab (Events, Blogs, Products)
   const [activeTab, setActiveTab] = useState("Events");
@@ -15,11 +14,11 @@ const Admin = () => {
   const [editingEventId, setEditingEventId] = useState<string | null>(null);
 
   // When the event update completes (from EditEventForm) you could perform additional tasks here.
-  const handleEventUpdate = (updatedEvent: any) => {
-    // For example, you might refresh the EventList or update local state.
-    // In our case, simply return to the list mode.
-    setFormMode("list");
-  };
+  // For example, you might refresh the EventList or update local state.
+  // In our case, simply return to the list mode.
+  // const handleEventUpdate = (updatedEvent: IEventWithId) => {
+  //   setFormMode("list");
+  // };
 
   return (
     <div>
@@ -89,7 +88,7 @@ const Admin = () => {
                     <EditEventForm
                       eventId={editingEventId}
                       onCancel={() => setFormMode("list")}
-                      onUpdate={handleEventUpdate}
+                      // onUpdate={handleEventUpdate}
                     />
                   )}
                 </div>

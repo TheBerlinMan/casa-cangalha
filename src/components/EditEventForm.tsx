@@ -5,7 +5,7 @@ import { IEventWithId, EventFormData } from '@/types/event';
 interface Props {
   eventId: string;
   onCancel: () => void;
-  onUpdate: (event: IEventWithId) => void;
+  onUpdate?: (event: IEventWithId) => void;
 }
 
 export default function EditEventForm({ eventId, onCancel, onUpdate }: Props) {
@@ -70,7 +70,7 @@ export default function EditEventForm({ eventId, onCancel, onUpdate }: Props) {
       }
 
       const updatedEvent = await response.json();
-      onUpdate(updatedEvent); // Call the callback with the updated event data
+      onUpdate?.(updatedEvent); // Call the callback with the updated event data
     } catch (error) {
       console.error('Error updating event:', error);
       // Handle error (show error message to user)
