@@ -19,12 +19,14 @@ const navItems = {
     blog: "Blog",
     about: "About",
     support: "Support",
+    shop: "Shop",
   },
   pt: {
     calendar: "Calendário",
     blog: "Blog",
     about: "Sobre",
     support: "Apoie",
+    shop: "Loja",
   },
 };
 
@@ -96,8 +98,9 @@ export const MainHeader = () => {
           </div>
         </div>
         <div className="flex gap-4 -mb-1.5 items-center">
-          <Link href="/calendar">{currentLang.calendar}</Link>
           <Link href="/blog">{currentLang.blog}</Link>
+          <Link href="/calendar">{currentLang.calendar}</Link>
+          <Link href="/shop">{currentLang.shop}</Link>
           <Link href="/about">{currentLang.about}</Link>
           <Link href="/support">{currentLang.support}</Link>
           <button
