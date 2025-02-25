@@ -1,23 +1,25 @@
 import { NextRequest } from 'next/server';
 import { getEventById, updateEvent, deleteEvent } from '@/server/controllers/eventController';
 
-export async function GET(
-  _request: NextRequest,
-  { params }: { params: { id: string } }
-) {
-  return getEventById(params.id);
+interface Props {
+  params: Promise<{
+      id: string;
+    }>;
 }
 
-export async function PUT(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
-  return updateEvent(request, params.id);
+export async function GET(_request: NextRequest, { params }: Props) {
+  const { id } = await params;
+  return getEventById(id);
 }
 
-export async function DELETE(
-  _request: NextRequest,
-  { params }: { params: { id: string } }
-) {
-  return deleteEvent(params.id);
+export async function PUT(request: NextRequest, { params }: Props) {
+  const { id } = await params;
+
+  return updateEvent(request, id);
+}
+
+export async function DELETE(_request: NextRequest, { params }: Props) {
+  const { id } = await params;
+
+  return deleteEvent(id);
 } 
