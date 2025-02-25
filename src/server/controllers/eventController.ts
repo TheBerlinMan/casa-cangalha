@@ -10,7 +10,7 @@ export async function getAllEvents() {
     return NextResponse.json(events);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to fetch events' },
+      { error },
       { status: 500 }
     );
   }
@@ -31,7 +31,7 @@ export async function getEventById(id: string) {
     return NextResponse.json(event);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to fetch event' },
+      { error },
       { status: 500 }
     );
   }
@@ -46,7 +46,7 @@ export async function createEvent(request: NextRequest) {
     return NextResponse.json(event, { status: 201 });
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to create event' },
+      { error },
       { status: 500 }
     );
   }
@@ -73,7 +73,7 @@ export async function updateEvent(request: NextRequest, id: string) {
     return NextResponse.json(event);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to update event' },
+      { error },
       { status: 500 }
     );
   }
@@ -94,7 +94,7 @@ export async function deleteEvent(id: string) {
     return NextResponse.json({ message: 'Event deleted successfully' });
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to delete event' },
+      { error },
       { status: 500 }
     );
   }
