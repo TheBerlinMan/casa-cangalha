@@ -14,19 +14,22 @@
 - [x] Display Event List on Admin Dashboard 
 - [x] Setup FullCalendar? on Calendar page. Research Alts. 
 - [x] Plug Events into FullCalendar 
+- [] When Event's Calendar are linked - add them to landing page
 - [] Structure About Page w/ Bio (History, About Jackie, Mission / Vision)
 - [] Structure Support Page (Link to Patreon & Brazillian version)
 - [] Update Footer w/ Accurate Information
-- [] When Event's Calendar are linked - at them to landing page
 - [] When Patreon / Other Links are available, add them to Landing
-- [] Research best way to funnel in blog posts and have them styled nicely 
-- [] Set up Event model 
-- [] Blog Controllers
-- [] New Blog Form
-- [] Edit Blog Form
-- [] Display Blog List on Admin Dashboard 
+- [x] Research best way to funnel in blog posts and have them styled nicely 
+- [x] Set up Blog model 
+- [x] Blog Controllers
+- [x] New Blog Form
+- [x] Edit Blog Form
+- [x] Display Blog List on Admin Dashboard 
 - [] Display Blogs on Blog Page
-
+- [] Update Blog Form to use Quill type styling
+- [] Setup EN/PR translations for every page
+- [] RSS feed to recieve email notifcations when a blog or event is announced
+ 
 ## Later Todo
 - [] figure out how to keep the pages in the pages folder but remove 'pages/' from before each url route
 - [] add rsvp feature to event
