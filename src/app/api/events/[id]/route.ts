@@ -8,13 +8,16 @@ interface Props {
 }
 
 export async function GET(_request: NextRequest, { params }: Props) {
-  return getEventById(params.id);
+  const { id } = await params;
+  return getEventById(id);
 }
 
 export async function PUT(request: NextRequest, { params }: Props) {
-  return updateEvent(request, params.id);
+  const { id } = await params;
+  return updateEvent(request, id);
 }
 
 export async function DELETE(_request: NextRequest, { params }: Props) {
-  return deleteEvent(params.id);
+  const { id } = await params;
+  return deleteEvent(id);
 } 
