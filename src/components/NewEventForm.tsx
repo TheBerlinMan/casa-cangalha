@@ -1,16 +1,6 @@
 "use client"
 import { useState, FormEvent } from 'react';
-import Link from 'next/link';
-
-interface EventFormData {
-  title: string;
-  description: string;
-  startDate: string;
-  endDate: string;
-  location?: string;
-  imageUrl?: string;
-  isPublished: boolean;
-}
+import { EventFormData } from '@/types/event';
 
 interface Props {
   onCancel: () => void;

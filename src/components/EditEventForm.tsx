@@ -1,6 +1,5 @@
 "use client"
 import { useState, FormEvent, useEffect } from 'react';
-import Link from 'next/link';
 import { IEventWithId, EventFormData } from '@/types/event';
 
 interface Props {
