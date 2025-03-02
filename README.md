@@ -29,6 +29,7 @@
 - [] Update Blog Form to use Quill type styling
 - [] Setup EN/PR translations for every page
 - [] RSS feed to recieve email notifcations when a blog or event is announced
+
  
 ## Later Todo
 - [] figure out how to keep the pages in the pages folder but remove 'pages/' from before each url route
@@ -36,3 +37,4 @@
 - [] narrow down event form inputs
 - [] style sign-in button
 - [] currently anyone can sign into admin w a google account. figure out how to limit it to approved users
+- [] update blog form to work with chatgpt / whisper 
