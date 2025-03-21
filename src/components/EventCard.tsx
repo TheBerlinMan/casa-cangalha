@@ -12,11 +12,11 @@ const EventCard = ({ event }: EventCardProps) => {
   if (!event) return null;
 
   return (
-    <div className="overflow-hidden flex flex-col h-full border  border-black rounded-lg">
+    <div className="overflow-hidden flex flex-col h-full border  border-gray-200 rounded-lg shadow-md bg-white">
       <div className="relative h-48 w-full">
-        <Image src={event.imageUrl || ''} fill alt={event.title} className='object-cover'/>
+        <Image src={event.imageUrl || 'https://picsum.photos/300/200'} fill alt={event.title} className='object-cover'/>
       </div>
-      <div id='header'className='p-4'>
+      <div id='header'className='p-4 flex flex-col'>
         <h1 className='text-2xl font-bold'>{event.title}</h1>
         <p className='text-sm text-gray-500'>{event.description}</p>
       </div>
@@ -33,7 +33,7 @@ const EventCard = ({ event }: EventCardProps) => {
       </div>
       <div className='flex items-center gap-2'>
         <MapPin size={16}/>
-        <p>{event.location}</p>
+        <p>{event.location || 'Location not available'}</p>
       </div>
       </div>
       <div id='footer' className='p-4'>
