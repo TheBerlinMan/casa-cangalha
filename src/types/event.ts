@@ -1,5 +1,5 @@
 // Define the base event interface
-export interface IEvent {
+export interface Event {
   _id?: string;
   title: string;
   description: string;
@@ -12,7 +12,7 @@ export interface IEvent {
   updatedAt?: Date;
 }
 
-export type IEventWithId = IEvent & {
+export type IEventWithId = Event & {
   _id: string;
 };
 
