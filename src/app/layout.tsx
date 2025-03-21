@@ -19,7 +19,11 @@ export default function RootLayout({
   return (
     <ClerkProvider>
     <html lang="en">
-      <body className="min-h-screen flex flex-col" >
+      <body className="min-h-screen flex flex-col"
+       style={{
+        backgroundColor: "#f0f0f0",
+       }}
+       >
         <LanguageProvider>
           <Header />
           <main className="flex-grow py-4 px-8">

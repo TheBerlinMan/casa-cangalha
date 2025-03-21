@@ -15,8 +15,8 @@ import {
 
 const navItems = {
   en: {
-    calendar: "Calendar",
-    blog: "Blog",
+    calendar: "Events",
+    blog: "Newsletter",
     about: "About",
     support: "Support",
     shop: "Shop",
@@ -100,15 +100,15 @@ export const MainHeader = () => {
         <div className="flex gap-4 -mb-1.5 items-center">
           <Link href="/blog">{currentLang.blog}</Link>
           <Link href="/calendar">{currentLang.calendar}</Link>
-          <Link href="/shop">{currentLang.shop}</Link>
+          {/* <Link href="/shop">{currentLang.shop}</Link> */}
           <Link href="/about">{currentLang.about}</Link>
           <Link href="/support">{currentLang.support}</Link>
-          <button
+          {/* <button
             onClick={toggleLanguage}
             className="ml-4 px-3 py-1 rounded border border-white/40 hover:bg-white/10 transition-colors"
           >
             {language === "en" ? "EN" : "PT"}
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
