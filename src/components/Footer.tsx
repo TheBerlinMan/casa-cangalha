@@ -25,7 +25,7 @@ const Footer = () => {
         <div>
           <div>
             <div className="font-bold mb-5 max-w-xs text-gray-200">Pages</div>
-            <div className="text-sm text-gray-500 flex flex-col gap-1.5 text-gray-300">
+            <div className="text-sm flex flex-col gap-1.5 text-gray-300">
               <div>Newsletter</div>
               <div>Events</div>
               <div>About</div>
@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
         <div>
           <div className="font-bold mb-5 max-w-xs text-gray-200">Support</div>
-          <div className="text-sm font-gray-300 flex flex-col gap-1.5 text-gray-600 text-gray-300">
+          <div className="text-sm flex flex-col gap-1.5 text-gray-600 text-gray-300">
             <div>Patreon</div>
             <div>Arob.se</div>
             <div>Buy us a coffee</div>
@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
         <div>
           <div className="font-bold mb-5 max-w-xs text-gray-200">Contact</div>
-          <div className="text-sm font-gray-300 flex flex-col gap-2 text-gray-300">
+          <div className="text-sm flex flex-col gap-2 text-gray-300">
             <div className="flex gap-2 items-start">
               <MapPin size={20} className="text-gray-200" />
               <div>Cangalha, Auiruoca, MG, Brazil</div>

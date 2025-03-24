@@ -74,7 +74,7 @@ export default function SupportPage() {
   ]
 
   return (
-    <main className="flex min-h-screen flex-col py-12 px-4 md:px-6 lg:px-8">
+    <main className="flex min-h-screen flex-col py-12 px-4 md:px-6 lg:px-8 max-w-5xl mx-auto">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center flex flex-col">
           <h1 className="text-2xl font-bold tracking-tight" style={{ color: "#65844A" }}>Support Our Community Center</h1>

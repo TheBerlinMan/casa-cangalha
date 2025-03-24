@@ -31,7 +31,7 @@ const EventsPage = () => {
   if (events.length === 0) return <div className="text-center py-8">No events found.</div>;
 
   return (
-    <div className="container mx-auto py-12 px-4" >
+    <div className="container mx-auto py-12 px-4 max-w-5xl" >
       <div className="flex flex-col">
 
       <h1 className="text-2xl font-bold text-center" style={{ color: "#65844A" }}> Casa Cangalha Community Events</h1>

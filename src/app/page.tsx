@@ -60,7 +60,7 @@ export default function Home() {
   const recentEvents = sortedEvents.slice(0, 3);
 
   return (
-    <div className="w-[100%]">
+    <div className="w-[100%] max-w-5xl mx-auto">
       {/* Main Intro */}
       <div className="flex gap-4 -mt-8 justify-center items-center">
         <Image

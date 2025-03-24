@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   return (
-    <div className="container mx-auto py-12 px-4 flex flex-col gap-6" >
+    <div className="container mx-auto py-12 px-4 flex flex-col gap-6 max-w-5xl" >
       <div>
         <h1 
           className="text-2xl font-bold text-center"
