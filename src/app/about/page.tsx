@@ -9,9 +9,20 @@ const About = () => {
         About Casa Cangalha
       </h1>
 
-      <div id="mission" className="flex flex-col md:flex-row items-stretch mb-6">
+      <div id="mission" className="flex flex-col md:flex-row items-stretch mb-6 p-4 gap-4">
+
+         {/* Right cell: The image container automatically stretched to the text height */}
+         <div className="relative md:w-1/2">
+          <Image
+            src="/images/rainbow.jpg"
+            alt="Casa Cangalha"
+            fill
+            className="object-cover rounded-md "
+          />
+        </div>
+
         {/* Left cell: Text container determines the height */}
-        <div id="coreValues" className="md:w-1/2 p-4">
+        <div id="coreValues" className="md:w-1/2">
           <div className="mb-3">
             <h2 className="text-xl font-bold mb-1">Our Mission &amp; Values</h2>
             <p className="text-gray-500">
@@ -47,20 +58,22 @@ const About = () => {
           </div>
         </div>
 
-        {/* Right cell: The image container automatically stretched to the text height */}
-        <div className="relative md:w-1/2">
-          <Image
-            src="/images/rainbow.jpg"
-            alt="Casa Cangalha"
-            fill
-            className="object-cover p-4"
-          />
-        </div>
+     
       </div>
 
-      <div>
-        <h2 className="text-xl font-bold mb-1">Our History & Founder</h2>
+      <div className="p-4">
+        
         <div className="flex flex-row gap-4">
+        
+          <div className="flex flex-col gap-2">
+
+          <h2 className="text-xl font-bold mb-1">Our History & Founder</h2>
+          <p>
+            Casa Cangalha was founded in 2020 by a group of volunteers who
+            wanted to create a space for the community to come together and
+            learn about the history of the area.
+          </p>
+          </div>
           <div>
             <Image
               src="/images/Jaq.jpeg"
@@ -70,11 +83,6 @@ const About = () => {
               className="object-cover rounded-md"
             />
           </div>
-          <p className="w-3/4">
-            Casa Cangalha was founded in 2020 by a group of volunteers who
-            wanted to create a space for the community to come together and
-            learn about the history of the area.
-          </p>
         </div>
       </div>
     </div>
