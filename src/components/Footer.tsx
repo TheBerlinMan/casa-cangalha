@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
         <div>
           <div className="font-bold mb-5 max-w-xs text-gray-200">Support</div>
-          <div className="text-sm flex flex-col gap-1.5 text-gray-600 text-gray-300">
+          <div className="text-sm flex flex-col gap-1.5 text-gray-300">
             <div>Patreon</div>
             <div>Arob.se</div>
             <div>Buy us a coffee</div>
