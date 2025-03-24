@@ -14,19 +14,27 @@ import Image from "next/image";
 
 const Blog = () => {
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex justify-between">
-        <h1 className="text-3xl font-bold mb-6">Casa Cangalha Newsletter</h1>
+    <div className="container mx-auto py-12 px-4 flex flex-col gap-6">
+      <div>
+        <h1
+          className="text-2xl font-bold text-center"
+          style={{ color: "#65844A" }}
+        >
+          Join The Casa Cangalha Newsletter
+        </h1>
         {/* move form into it's own component */}
+        <p className="text-center text-gray-500">
+          Stay updated with the latest news and events from our community.
+        </p>
       </div>
-      <Card>
-        <CardHeader className="mb-3">
-          <CardTitle className="text-xl">Join Our Newsletter!</CardTitle>
-          <CardDescription>
+      <Card className="p-10">
+        {/* <CardHeader className="mb-3"> */}
+        {/* <CardTitle className="text-xl">Join Our Newsletter!</CardTitle> */}
+        {/* <CardDescription>
             Stay updated with the latest news and events from our community.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+          </CardDescription> */}
+        {/* </CardHeader> */}
+        <CardContent className="p-0">
           <div className="flex items-start gap-2">
             <div className="flex justify-start">
               <div className="h-full">

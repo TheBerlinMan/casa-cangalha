@@ -25,7 +25,9 @@ export default function RootLayout({
        }}
        >
         <LanguageProvider>
-          <Header />
+          <div className="fixed top-0 left-0 right-0 z-50">
+            <Header />
+          </div>
           <main className="flex-grow py-4 px-8">
             {children}
           </main>

@@ -31,9 +31,12 @@ const EventsPage = () => {
   if (events.length === 0) return <div className="text-center py-8">No events found.</div>;
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-1 text-center"> Casa Cangalha Events</h1>
-      <h1 className="text-xl mb-6 text-gray-500 text-center"> Discover upcoming events and activities at our community center.</h1>
+    <div className="container mx-auto py-12 px-4" >
+      <div className="flex flex-col">
+
+      <h1 className="text-2xl font-bold text-center" style={{ color: "#65844A" }}> Casa Cangalha Community Events</h1>
+      <h1 className="text-md mb-6 text-gray-500 text-center"> Discover upcoming events and activities at our community center.</h1>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {events.map((event) => (
           <EventCard key={event._id} event={event} />

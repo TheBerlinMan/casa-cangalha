@@ -49,12 +49,7 @@ export const AdminHeader = () => {
         <div>
           <div className="flex gap-4 text-2xl items-end">
             <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/White-Text.png"
-                alt="Casa Cangalha"
-                width={200}
-                height={200}
-              />
+              Casa Cangalha
             </Link>
           </div>
         </div>
@@ -82,22 +77,18 @@ export const MainHeader = () => {
   return (
     <div>
       <div
-        className="flex justify-between items-end px-8 py-4 h-20"
-        style={{ backgroundColor: "#65844A", color: "#E3E7D3" }}
+        className="flex justify-between items-center px-6 py-2 h-12 shadow-md"
+        style={{ borderBottom: "1px solid #65844A", color: "#65844A", backgroundColor: "#f0f0f0"}}
+        // style={{ backgroundColor: "#65844A", color: "#E3E7D3" }}
       >
         <div>
           <div className="flex gap-4 text-2xl items-end">
             <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/White-Text.png"
-                alt="Casa Cangalha"
-                width={200}
-                height={200}
-              />
+              Casa Cangalha
             </Link>
           </div>
         </div>
-        <div className="flex gap-4 -mb-1.5 items-center">
+        <div className="flex gap-4 items-center">
           <Link href="/blog">{currentLang.blog}</Link>
           <Link href="/calendar">{currentLang.calendar}</Link>
           {/* <Link href="/shop">{currentLang.shop}</Link> */}

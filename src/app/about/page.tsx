@@ -5,16 +5,21 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const About = () => {
   return (
-    <div className="container mx-auto p-4 flex flex-col gap-6">
+    <div className="container mx-auto py-12 px-4 flex flex-col gap-6">
       <div>
-        <h1 className="text-2xl font-bold text-center">About Casa Cangalha</h1>
+        <h1
+          className="text-2xl font-bold text-center"
+          style={{ color: "#65844A" }}
+        >
+          About Casa Cangalha
+        </h1>
         <p className="text-gray-500 text-center">
           Learn about our mission, history, team, and how we serve the
           community.
         </p>
       </div>
 
-      <Card className="p-10">
+      <Card className="p-10" style={{ backgroundColor: "#65844A" }}>
         <CardContent className="p-0">
           <div
             id="mission"
@@ -23,10 +28,10 @@ const About = () => {
             {/* Left cell: Text container determines the height */}
             <div id="coreValues" className="md:w-1/2">
               <div className="mb-3">
-                <h2 className="text-xl font-bold mb-1">
+                <h2 className="text-xl font-bold mb-1 text-white">
                   Our Mission &amp; Values
                 </h2>
-                <p className="text-gray-500">
+                <p className="text-gray-300">
                   Our community center is dedicated to enriching lives and
                   building a stronger community through inclusive programs,
                   services, and spaces that foster connection, learning, and
@@ -34,26 +39,26 @@ const About = () => {
                 </p>
               </div>
               <div className="flex gap-2 items-start mb-2">
-                <BadgeCheck className="w-6 h-6 shrink-0" strokeWidth={1} />
-                <p>
-                  <span className="font-bold">Inclusion:</span> We celebrate
-                  diversity and create opportunities for everyone to participate
-                  and thrive.
+                <BadgeCheck className="w-6 h-6 shrink-0 text-white" strokeWidth={1} />
+                <p className="text-gray-300">
+                  <span className="font-bold text-white">Inclusion:</span> We
+                  celebrate diversity and create opportunities for everyone to
+                  participate and thrive.
                 </p>
               </div>
               <div className="flex gap-2 items-start mb-2">
-                <BadgeCheck className="w-6 h-6 shrink-0" strokeWidth={1} />
-                <p>
-                  <span className="font-bold">Empowerment:</span> We inspire and
-                  equip individuals to take ownership of their lives and make a
-                  positive impact on their community.
+                <BadgeCheck className="w-6 h-6 shrink-0 text-white" strokeWidth={1} />
+                <p className="text-gray-300">
+                  <span className="font-bold text-white">Empowerment:</span> We
+                  inspire and equip individuals to take ownership of their lives
+                  and make a positive impact on their community.
                 </p>
               </div>
               <div className="flex gap-2 items-start">
-                <BadgeCheck className="w-6 h-6 shrink-0" strokeWidth={1} />
-                <p>
-                  <span className="font-bold">Sustainability:</span> We are
-                  committed to preserving our environment and promoting
+                <BadgeCheck className="w-6 h-6 shrink-0 text-white" strokeWidth={1} />
+                <p className="text-gray-300">
+                  <span className="font-bold text-white">Sustainability:</span> We
+                  are committed to preserving our environment and promoting
                   practices that ensure long-term viability for future
                   generations.
                 </p>
@@ -73,7 +78,7 @@ const About = () => {
         </CardContent>
       </Card>
 
-      <Card className="p-10">
+      <Card className="p-10" style={{ backgroundColor: "#65844A" }}>
         <CardContent className="p-0">
           <div>
             <div className="flex flex-row gap-4">
@@ -87,10 +92,10 @@ const About = () => {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <h2 className="text-xl font-bold mb-1">
+                <h2 className="text-xl font-bold mb-1 text-white">
                   Our History & Founder
                 </h2>
-                <p className="w-3/4">
+                <p className="w-3/4 text-gray-200">
                   Casa Cangalha was founded in 2020 by a group of volunteers who
                   wanted to create a space for the community to come together
                   and learn about the history of the area.
@@ -101,11 +106,11 @@ const About = () => {
         </CardContent>
       </Card>
 
-      <Card className="p-10">
+      <Card className="p-10" style={{ backgroundColor: "#65844A" }}>
         <CardContent className="p-0">
           <div className="mb-4 text-center">
-            <h2 className="text-xl font-bold">Get Involved</h2>
-            <p className="text-gray-500 text-sm">
+            <h2 className="text-xl font-bold text-white">Get Involved</h2>
+            <p className="text-gray-200 text-sm">
               If you connect with our mission, there are many ways to support
               us.
             </p>
@@ -114,7 +119,7 @@ const About = () => {
             <div className="flex gap-6">
               <div className="flex flex-col justify-center items-center p-4 border rounded-lg">
                 <h3 className="text-lg font-bold mb-1 ">Volunteer</h3>
-                <p className="text-center text-gray-500 text-sm">
+                <p className="text-center text-gray text-sm">
                   If you are interested in volunteering, please contact us.
                 </p>
                 <button className="py-2 px-4 border rounded-md mt-4 text-sm font-bold">
@@ -123,7 +128,7 @@ const About = () => {
               </div>
               <div className="flex flex-col justify-center items-center p-4 border rounded-lg">
                 <h3 className="text-lg font-bold mb-1">Donate</h3>
-                <p className="text-center text-gray-500 text-sm">
+                <p className="text-center text-gray text-sm">
                   Contribute financially to help sustain our programs and
                   services.{" "}
                 </p>
@@ -133,7 +138,7 @@ const About = () => {
               </div>
               <div className="flex flex-col justify-center items-center p-4 border rounded-lg">
                 <h3 className="text-lg font-bold mb-1">Partner</h3>
-                <p className="text-center text-gray-500 text-sm">
+                <p className="text-center text-gray text-sm">
                   Collaborate with us on initiatives that benefit the community.
                 </p>
                 <button className="py-2 px-4 border rounded-md mt-4 text-sm font-bold">

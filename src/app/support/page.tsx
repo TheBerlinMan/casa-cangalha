@@ -76,15 +76,15 @@ export default function SupportPage() {
   return (
     <main className="flex min-h-screen flex-col py-12 px-4 md:px-6 lg:px-8">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold tracking-tight mb-4">Support Our Community Center</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        <div className="text-center flex flex-col">
+          <h1 className="text-2xl font-bold tracking-tight" style={{ color: "#65844A" }}>Support Our Community Center</h1>
+          <p className="text-md text-gray-500 max-w-3xl mx-auto">
             Your generous support helps us continue providing valuable programs and services to our community.
           </p>
         </div>
 
         <Tabs defaultValue="donate" className="w-full">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 my-8">
             <TabsTrigger value="donate">Donate</TabsTrigger>
             <TabsTrigger value="impact">Your Impact</TabsTrigger>
             <TabsTrigger value="sponsors">Our Sponsors</TabsTrigger>
