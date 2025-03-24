@@ -82,12 +82,12 @@ export const MainHeader = () => {
       >
         <div>
           <div className="flex gap-4 text-2xl items-end">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2 font-bold text-">
               Casa Cangalha
             </Link>
           </div>
         </div>
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-4 items-center font-bold text-sm">
           <Link href="/blog">{currentLang.blog}</Link>
           <Link href="/calendar">{currentLang.calendar}</Link>
           {/* <Link href="/shop">{currentLang.shop}</Link> */}

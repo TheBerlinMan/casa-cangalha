@@ -19,11 +19,11 @@ const About = () => {
         </p>
       </div>
 
-      <Card className="p-10" style={{ border: "1px solid #65844A" }}>
+      <Card className="p-10" style={{ border: "2px solid #65844A" }}>
         <CardContent className="p-0">
           <div
             id="mission"
-            className="flex flex-col md:flex-row items-stretch gap-4"
+            className="flex flex-col md:flex-row items-stretch gap-10"
             
           >
             {/* Left cell: Text container determines the height */}
@@ -43,7 +43,7 @@ const About = () => {
                 <CircleCheck
                   className="w-6 h-6 shrink-0"
                   style={{ color: "#65844A" }}
-                  strokeWidth={1}
+                  strokeWidth={2}
                 />
                 <p className="text-gray-500">
                   <span className="font-bold" style={{ color: "#65844A" }}>Inclusion:</span> We
@@ -55,7 +55,7 @@ const About = () => {
                 <CircleCheck
                   className="w-6 h-6 shrink-0"
                   style={{ color: "#65844A" }}
-                  strokeWidth={1}
+                  strokeWidth={2}
                 />
                 <p className="text-gray-500">
                   <span className="font-bold" style={{ color: "#65844A" }}>Empowerment:</span> We
@@ -67,7 +67,7 @@ const About = () => {
                 <CircleCheck
                   className="w-6 h-6 shrink-0"  
                   style={{ color: "#65844A" }}
-                  strokeWidth={1}
+                  strokeWidth={2}
                 />
                 <p className="text-gray-500">
                   <span className="font-bold" style={{ color: "#65844A" }}>Sustainability:</span>{" "}
@@ -82,7 +82,7 @@ const About = () => {
             <div className="relative md:w-1/2" >
               <Image
                 src="https://xutyyb6ktw.ufs.sh/f/L1DC10pBNoFxIvLX1rds9GLwmtTjNYbl03qWCDoEFafgeAH2"
-                alt="Casa Cangalha"
+                alt="Casa Cangalha House w/ Rainbow"
                 fill
                 className="object-cover rounded-md shadow-md"
                 style={{ border: "2px solid #65844A" }}
@@ -94,14 +94,14 @@ const About = () => {
 
     
 
-      <Card className="p-10" style={{ border: "1px solid #65844A" }}>
+      <Card className="p-10" style={{ border: "2px solid #65844A" }}>
         <CardContent className="p-0">
           <div>
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-row gap-10">
               <div>
                 <Image
                   src="https://xutyyb6ktw.ufs.sh/f/L1DC10pBNoFxowNK3pJokKcOD4lsZAvM9E3U5p8N6fVHPhyd"
-                  alt="Casa Cangalha"
+                  alt="Jaq w/ Flowers"
                   width={500}
                   height={500}
                   className="object-cover rounded-md shadow-md"
@@ -132,7 +132,7 @@ const About = () => {
         </div>
         <div className="flex gap-4 w-full">
           <div className="flex gap-6">
-            <div className="flex flex-col justify-center items-center p-4 rounded-lg bg-white" style={{ border: "1px solid #65844A" }}>
+            <div className="flex flex-col justify-center items-center p-4 rounded-lg bg-white" style={{ border: "2px solid #65844A" }}>
               <h3 className="text-lg font-bold mb-1" style={{ color: "#65844A" }}>Volunteer</h3>
               <p className="text-center text-gray-500 text-sm">
                 If you are interested in volunteering, please contact us.
@@ -141,7 +141,7 @@ const About = () => {
                 Learn More
               </button>
             </div>
-            <div className="flex flex-col justify-center items-center p-4 rounded-lg bg-white" style={{ border: "1px solid #65844A" }}>
+            <div className="flex flex-col justify-center items-center p-4 rounded-lg bg-white" style={{ border: "2px solid #65844A" }}>
               <h3 className="text-lg font-bold mb-1" style={{ color: "#65844A" }}>Donate</h3>
               <p className="text-center text-gray-500 text-sm">
                 Contribute financially to help sustain our programs and
@@ -151,7 +151,7 @@ const About = () => {
                 Donate
               </button>
             </div>
-            <div className="flex flex-col justify-center items-center p-4 rounded-lg bg-white" style={{ border: "1px solid #65844A" }}>
+            <div className="flex flex-col justify-center items-center p-4 rounded-lg bg-white" style={{ border: "2px solid #65844A" }}>
               <h3 className="text-lg font-bold mb-1" style={{ color: "#65844A" }}>Partner</h3>
               <p className="text-center text-gray-500 text-sm">
                 Collaborate with us on initiatives that benefit the community.
