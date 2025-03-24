@@ -81,7 +81,7 @@ const About = () => {
             {/* Right cell: The image container automatically stretched to the text height */}
             <div className="relative md:w-1/2" >
               <Image
-                src="/images/rainbow.jpg"
+                src="https://xutyyb6ktw.ufs.sh/f/L1DC10pBNoFxIvLX1rds9GLwmtTjNYbl03qWCDoEFafgeAH2"
                 alt="Casa Cangalha"
                 fill
                 className="object-cover rounded-md shadow-md"
@@ -100,7 +100,7 @@ const About = () => {
             <div className="flex flex-row gap-4">
               <div>
                 <Image
-                  src="/images/Jaq.jpeg"
+                  src="https://xutyyb6ktw.ufs.sh/f/L1DC10pBNoFxowNK3pJokKcOD4lsZAvM9E3U5p8N6fVHPhyd"
                   alt="Casa Cangalha"
                   width={500}
                   height={500}
