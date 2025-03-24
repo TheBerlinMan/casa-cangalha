@@ -1,8 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useLanguage } from "./context/LanguageContext";
-import { LucideClock8, LucideCalendar } from "lucide-react";
+import { LucideClock8, LucideCalendar, ArrowRight } from "lucide-react";
+import EventCard from "@/components/EventCard";
+import { Event } from "@/types/event"; // Make sure this import matches your event type definition
 
 export default function Home() {
   const { language } = useLanguage();
@@ -30,9 +34,34 @@ export default function Home() {
 
   const currentContent = content[language];
 
+  // State for events and loading status
+  const [events, setEvents] = useState<Event[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/events")
+      .then((res) => res.json())
+      .then((data) => {
+        setEvents(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching events:", err);
+        setLoading(false);
+      });
+  }, []);
+
+  // Create a sorted copy so we don’t mutate the state array
+  const sortedEvents = [...events].sort(
+    (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
+  );
+
+  // Get the three most recent/upcoming events
+  const recentEvents = sortedEvents.slice(0, 3);
+
   return (
     <div className="w-[100%]">
-      {/* <h1 className="text-4xl font-bold text-center -mb-8 mt-8">Welcome to our website!</h1> */}
+      {/* Main Intro */}
       <div className="flex gap-4 -mt-8 justify-center items-center">
         <Image
           src="/Assets-07.png"
@@ -54,6 +83,8 @@ export default function Home() {
           </button>
         </div>
       </div>
+
+      {/* Hours / Events */}
       <div
         className="flex justify-around items-center w-full px-8 py-6 border-2 rounded-md"
         style={{ borderColor: "#65844A" }}
@@ -70,6 +101,29 @@ export default function Home() {
           <div className="flex flex-col items-center">
             <p>See all of our community events.</p>
           </div>
+        </div>
+      </div>
+
+      {/* Upcoming Events */}
+      <div>
+        <div className="flex justify-between items-center gap-2 p-4">
+          <h2 className="text-2xl font-bold">Upcoming Events</h2>
+          <div className="flex gap-2 items-center">
+            <Link href="/calendar">View all events </Link>
+            <ArrowRight size={20} strokeWidth={1} />
+          </div>
+        </div>
+
+        <div id="recent-events" className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+          {loading ? (
+            <p>Loading events...</p>
+          ) : recentEvents.length > 0 ? (
+            recentEvents.map((event) => (
+              <EventCard key={event._id} event={event} />
+            ))
+          ) : (
+            <p>No upcoming events found.</p>
+          )}
         </div>
       </div>
     </div>
