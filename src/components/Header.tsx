@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { usePathname } from "next/navigation";
 import {
@@ -94,12 +93,13 @@ export const MainHeader = () => {
           {/* <Link href="/shop">{currentLang.shop}</Link> */}
           <Link href="/about">{currentLang.about}</Link>
           <Link href="/support">{currentLang.support}</Link>
-          {/* <button
+          <button
             onClick={toggleLanguage}
-            className="ml-4 px-3 py-1 rounded border border-white/40 hover:bg-white/10 transition-colors"
+            // className="ml-4 px-3 py-1 rounded border border-white/40 hover:bg-white/10 transition-colors"
+            className="hidden"
           >
             {language === "en" ? "EN" : "PT"}
-          </button> */}
+          </button>
         </div>
       </div>
     </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Mail, Phone, MapPin, Instagram } from "lucide-react";
 
@@ -18,7 +17,7 @@ const Footer = () => {
         <div>
           <div className="font-bold mb-5 max-w-xs text-gray-100">Casa Cangalha</div>
           <div className="max-w-xs text-sm text-gray-300 mb-6">
-            Lorem Ipsum - это текст-"рыба", часто используемый в печати и
+            Lorem Ipsum - это текст-рыба, часто используемый в печати и
             вэб-дизайне. Lorem Ipsum является стандартной
           </div>
           <div className="max-w-xs text-sm text-gray-200">&copy; All rights reserved by Casa Cangalha, 2025</div>
