@@ -105,12 +105,13 @@ export default function Home() {
       </div>
 
       {/* Upcoming Events */}
-      <div>
-        <div className="flex justify-between items-center gap-2 p-4">
-          <h2 className="text-2xl font-bold">Upcoming Events</h2>
-          <div className="flex gap-2 items-center">
-            <Link href="/calendar">View all events </Link>
-            <ArrowRight size={20} strokeWidth={1} />
+      {/* show a compact version of the event cards here */}
+      <div style={{ backgroundColor: "#65844A" }} className="rounded-md p-4">
+        <div className="flex justify-between items-center gap-2 px-4">
+          <h2 className="text-2xl font-bold text-white">Upcoming Events</h2>
+          <div className="flex gap-2 items-center text-white text-sm">
+            <Link href="/calendar" className="">View all events </Link>
+            <ArrowRight size={20} strokeWidth={2} />
           </div>
         </div>
 
